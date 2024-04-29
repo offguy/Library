@@ -5,6 +5,7 @@ class Library:
     def __init__(self, num_of_shelves=3):
         self.shelves = []
         self.readers = []
+        self.id_count = 1
         for i in range(1, num_of_shelves + 1): 
             shelf_name = f"Shelf {i}"  
             shelf = Shelf(name=shelf_name)  
@@ -70,20 +71,21 @@ class Library:
             s.orgenize_books_by_pages()
         return "books in order"
 
-    def register_reader(self, id):
-        is_exist = next((r.id for r in self.readers if r.id == id), None)
+    def register_reader(self, name):
+        is_exist = next((r.name for r in self.readers if r.name == name), None)
         if not is_exist:
-            new_reader = Reader(id)
+            new_reader = Reader(self.id_count, name)
+            self.id_count +=1
             self.readers.append(new_reader)
-            return f"Reader (id: {id}) created"
-        return f"Reader id {id} is in use"
+            return f"Reader {name} (id: {self.id_count}) created"
+        return f"Reader id {name} is in use"
 
-    def remove_reader(self, id):
-        is_exist = next((r for r in self.readers if r.id == id), None)
+    def remove_reader(self, name):
+        is_exist = next((r for r in self.readers if r.name == name), None)
         if not is_exist:
             return "reader not found"
-        self.readers = [x for x in self.readers if x.id != id]
-        return f"reader {id} removed"
+        self.readers = [x for x in self.readers if x.name != name]
+        return f"reader {name} removed"
     
     def reader_read_book(self, reader_id, book_name):
         reader = next((r for r in self.readers if r.id == reader_id), None)

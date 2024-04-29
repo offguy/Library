@@ -1,0 +1,65 @@
+{
+    "id_count": 2,
+    "shelves": [
+        {
+            "name": "Shelf 1",
+            "books_on_shelf": [
+                {
+                    "author": "Alon",
+                    "name": "My Home",
+                    "num_of_pages": 215
+                },
+                {
+                    "author": "Amir",
+                    "name": "My World",
+                    "num_of_pages": 300
+                }
+            ],
+            "is_shelf_full": false
+        },
+        {
+            "name": "Shelf 2",
+            "books_on_shelf": [
+                {
+                    "author": "Miri",
+                    "name": "My Gen",
+                    "num_of_pages": 150
+                },
+                {
+                    "author": "Sean",
+                    "name": "My Shits",
+                    "num_of_pages": 50
+                }
+            ],
+            "is_shelf_full": false
+        },
+        {
+            "name": "Shelf 3",
+            "books_on_shelf": [
+                {
+                    "author": "Dana",
+                    "name": "My Hell",
+                    "num_of_pages": 200
+                },
+                {
+                    "author": "Alon",
+                    "name": "My Shits2",
+                    "num_of_pages": 180
+                }
+            ],
+            "is_shelf_full": false
+        }
+    ],
+    "readers": [
+        {
+            "id": 1,
+            "name": "Guy Ofer",
+            "books": [
+                {
+                    "title": "My Hell",
+                    "date": "29-04-2024, 00:00"
+                }
+            ]
+        }
+    ]
+}
